@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Cidadão Participa - O Canal do Cidadão com o Poder Público</title>
+  </head>
+  <body>
+
+    <header class="text-white text-center d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <h1 class="animation-h1">
+              <span class="text-uppercase">Cidadão Participa</span>
+              <small class="d-block">O Canal do Cidadão com o Poder Público</small>
+            </h1>
+            <hr>
+            <p class="animation-p">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quo atque, nulla tempore molestias eum, maiores facilis alias consequuntur non placeat omnis earum? Esse animi accusantium saepe dignissimos reiciendis dolore.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="col-md-10 offset-md-1">
+
+          <div class="title-h2">
+            <h2 class="text-center">1º Passo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos neque iste ipsa, nemo sequi, assumenda inventore ullam architecto qui sunt tempore asperiores repellendus illum omnis et rem aliquid provident optio?</p>
+          </div>
+
+          <form name="form" id="form" enctype="multipart/form-data" action="index.php" method="post">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <select name="uf" id="uf" class="form-control">
+                    <option value="0" selected="selected">Seu estado (UF)*</option>
+                    <option value="AP" title="AP">AP</option>
+                    <option value="GO" title="GO">GO</option>
+                    <option value="MG" title="MG">MG</option>
+                    <option value="MS" title="MS">MS</option>
+                    <option value="PA" title="PA">PA</option>
+                    <option value="PB" title="PB">PB</option>
+                    <option value="PE" title="PE">PE</option>
+                    <option value="PI" title="PI">PI</option>
+                    <option value="PR" title="PR">PR</option>
+                    <option value="RJ" title="RJ">RJ</option>
+                    <option value="RS" title="RS">RS</option>
+                    <option value="SC" title="SC">SC</option>
+                    <option value="SE" title="SE">SE</option>
+                    <option value="SP" title="SP">SP</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div id="combocidade" name="combocidade">
+                    <select name="id_cidade" id="id_cidade" class="form-control">
+                      <option value="0" selected="">Sua cidade*</option>
+                    </select>               
+                  </div>  
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group pdg">
+                  <div id="combomodalidade" name="combomodalidade">
+                    <select name="id_modalidade" id="id_modalidade" onchange="javascript:BuscarParlamentar();void(0);" class="form-control">
+                      <option value="0" selected="">Com quem você gostaria de se comunicar?*</option>
+                    </select>                 
+                  </div>  
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <div id="comboparlamentar" name="comboparlamentar">
+                    <select name="id_parlamentar" id="id_parlamentar" class="form-control" onchange="javascript:BuscarPerfil();void(0);">
+                      <option value="0" selected="">Selecione uma opção</option>
+                    </select>               
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group ">
+                <div id="combomanifestacao" name="combomanifestacao">
+                  <select name="id_manifestacao" id="id_manifestacao" class="form-control">
+                    <option value="0" selected="">Qual a sua manifestação?*</option>
+                    <option value="1">Solicitação</option>
+                    <option value="2">Sugestão</option>
+                    <option value="3">Reclamação</option>
+                    <option value="4">Elogio</option>
+                    <option value="5">Denúncia</option>
+                    <option value="6">Contato</option>
+                  </select>               
+                </div>  
+              </div>
+              </div>
+              <div class="col-md-6">
+                
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a href="" class="btn-next" title="Próximo">
+                <img src="images/icon-right-arrow.png" alt="">
+              </a>
+            </div>
+
+            <hr>
+
+            <div class="title-h2">
+              <h2 class="text-center">2º Passo</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos neque iste ipsa, nemo sequi, assumenda inventore ullam architecto qui sunt tempore asperiores repellendus illum omnis et rem aliquid provident optio?</p>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">            
+                  <input name="cpf" id="cpf" type="text" onblur="VerificaCPF(this.value);" maxlength="14" value="" onkeypress="BloquearLetras(event)" onkeyup="mascaraTexto(event,'999.999.999-99');if(this.value.length==14)xajax_buscarCPF(xajax.getFormValues('form'))" class="form-control" placeholder="CPF*">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome*">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="datanascimento" id="datanascimento" onkeyup="mascaraTexto(event,'99/99/9999');" maxlength="10" class="form-control" placeholder="Data Nascimento">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="email" id="email" onblur="VerificaEmail(this);" maxlength="35" class="form-control" placeholder="E-mail*">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                
+              </div>
+              <div class="col-md-6">
+                
+              </div>
+            </div>
+              
+              
+              
+              
+              
+              <span class="text-danger">*</span> Campo obrigatório
+              
+              
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="informacoes">
+              
+              
+              <div class="clearfix"></div>
+              
+              
+              
+              
+              
+              
+              <div class="form-group pdg">
+                <label>Celular: <span class="text-danger">*</span></label>
+                <input type="text" name="celular" id="celular" onkeyup="mascaraTexto(event,'(99)999999999');BloquearLetras(this,'num');" maxlength="13" class="form-control">
+              </div>
+              
+              <div class="form-group pdg">
+                <label>Telefone: <span class="text-danger">*</span></label>
+                <input type="text" name="telefone" id="telefone" maxlength="12" onkeyup="mascaraTexto(event,'(99)99999999');BloquearLetras(this,'num');" class="form-control">
+              </div>
+              
+              <div class="form-group pdg">
+                <label>CEP: <span class="text-danger">*</span></label>    
+                <input type="text" name="cep" id="cep" maxlength="9" onkeypress="BloquearLetras(event)" onkeyup="mascaraTexto(event,'99999-999');if(this.value.length==9){xajax_buscaCep(xajax.getFormValues('form'))}" class="form-control">
+
+              </div>
+              
+              <div class="form-group pdg">
+                <label>Logradouro: <span class="text-danger">*</span></label>
+                <input type="text" name="logradouro" id="logradouro" class="form-control">
+              </div>
+              
+              <div class="form-group pdg">
+                <label>Número: <span class="text-danger">*</span></label>
+                <input type="text" name="numero" id="numero" class="form-control">
+              </div>
+              
+              <div class="form-group pdg">
+                <label>Bairro: <span class="text-danger">*</span></label>
+                <input type="text" name="bairro" id="bairro" class="form-control">
+              </div>
+              
+              <div class="form-group pdg">
+                <label>Assunto:  </label>
+                <select id="id_assunto" name="id_assunto" class="form-control">
+                  <option value="0" selected="">Selecione</option>
+                                  <option value="11" title="ACESSIBILIDADE">ACESSIBILIDADE</option>
+                                  <option value="10" title="ÁGUA/LUZ/ESGOTO">ÁGUA/LUZ/ESGOTO</option>
+                                  <option value="19" title="ATENDIMENTO/CONTATO">ATENDIMENTO/CONTATO</option>
+                                  <option value="15" title="BENEFÍCIOS/ISENÇÕES">BENEFÍCIOS/ISENÇÕES</option>
+                                  <option value="6" title="COLETA DE LIXO">COLETA DE LIXO</option>
+                                  <option value="18" title="CONCURSO PÚBLICO">CONCURSO PÚBLICO</option>
+                                  <option value="12" title="CULTURA/ESPORTE/LAZER">CULTURA/ESPORTE/LAZER</option>
+                                  <option value="2" title="EDUCAÇÃO">EDUCAÇÃO</option>
+                                  <option value="4" title="ILUMINAÇÃO PÚBLICA">ILUMINAÇÃO PÚBLICA</option>
+                                  <option value="17" title="LEGISLAÇÃO/LEIS/PROJETOS">LEGISLAÇÃO/LEIS/PROJETOS</option>
+                                  <option value="5" title="MANUTENÇÃO DAS RUAS">MANUTENÇÃO DAS RUAS</option>
+                                  <option value="16" title="MEIO AMBIENTE">MEIO AMBIENTE</option>
+                                  <option value="3" title="OBRAS PÚBLICAS">OBRAS PÚBLICAS</option>
+                                  <option value="8" title="ÔNIBUS/TAXI/ESCOLAR">ÔNIBUS/TAXI/ESCOLAR</option>
+                                  <option value="20" title="OUTROS">OUTROS</option>
+                                  <option value="9" title="SANEAMENTO BÁSICO">SANEAMENTO BÁSICO</option>
+                                  <option value="1" title="SAÚDE">SAÚDE</option>
+                                  <option value="13" title="SEGURANÇA">SEGURANÇA</option>
+                                  <option value="7" title="TRÂNSITO/TRANSPORTES">TRÂNSITO/TRANSPORTES</option>
+                                  <option value="14" title="TRIBUTOS/IPTU/ISS/TAXAS">TRIBUTOS/IPTU/ISS/TAXAS</option>
+                                </select> 
+              </div>
+              
+              <div class="form-group txtarea">
+                <label>Descrição: <span class="text-danger">*</span></label>
+                <textarea name="descricao" id="descricao" class="form-control"></textarea>
+              </div>
+              
+              <div class="clearfix"></div>
+              
+              <span class="text-danger">*</span> Campo obrigatório
+              <div class="pull-right" id="botoes1" name="botoes1">
+                <a href="javascript:MudarDiv('2','1');void(0);" class="btn bt-voltar"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Voltar</a>
+                <a href="javascript:EnviarEmail();void(0);" class="btn btn-primary">Enviar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+              </div>
+              <div class="pull-right" id="botoes2" name="botoes2" style="display:none">
+                
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-white text-center d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <h2>Político - Como participar?</h2>
+            <p>Para fazer parte do projeto digital CIDADÃO PARTICIPA o político precisa possuir uma conta ativa no sistema <b>SGDI Gabinete Online</b>.</p>
+            <p>Entre no site do sistema SGDI Gabinete online (<a href="http://www.sgdi.com.br" target="_blank">www.sgdi.com.br</a>) e obtenha mais detalhes.</p>
+            <p><b>E-mail</b>: contato@tecnegocios.com.br</p>
+            <p><b>Telefone</b>: +55 11 4191-5112</p>
+            <p><b>Telefone</b>: +55 11 4191-6177</p>
+            <p><b>Whatsapp</b>: +55 11 94031-9006</p>
+            <hr>
+            <span>
+              <b>CIDADÃO PARTICIPA</b> é um projeto idealizado por <a href="http://tecnegocios.com.br/" target="_blank">TecNegócios</a> <br>
+              &copy; 2009/2018 - Todos os direitos reservados
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
